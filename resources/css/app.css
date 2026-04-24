@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@theme {
+  /* ─── AVLA Brand Tokens ─────────────────────────────────────────── */
+  --color-avla-blue:        #1B6EF3;
+  --color-avla-blue-light:  #4D91F7;
+  --color-avla-blue-dark:   #1254C4;
+  --color-avla-blue-subtle: #EBF2FE;
+
+  --color-avla-dark:        #0D1F3C;
+  --color-avla-dark-mid:    #162845;
+  --color-avla-dark-light:  #1E3A5F;
+
+  --color-surface:  #FFFFFF;
+  --color-bg:       #F5F8FF;
+  --color-bg-alt:   #EDF2FC;
+  --color-border:   #D6E2F8;
+
+  --color-text:         #0D1F3C;
+  --color-text-muted:   #5A6E8C;
+  --color-text-subtle:  #94A3B8;
+
+  --color-success:    #16A34A;
+  --color-success-bg: #DCFCE7;
+  --color-warning:    #D97706;
+  --color-warning-bg: #FEF3C7;
+  --color-danger:     #DC2626;
+  --color-danger-bg:  #FEE2E2;
+  --color-info:       #1B6EF3;
+  --color-info-bg:    #EBF2FE;
+
+  --font-heading: 'Plus Jakarta Sans', sans-serif;
+  --font-body:    'Inter', sans-serif;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+
+  --shadow-card:     0 1px 4px 0 rgba(13, 31, 60, 0.07), 0 4px 16px 0 rgba(13, 31, 60, 0.05);
+  --shadow-elevated: 0 4px 12px 0 rgba(13, 31, 60, 0.10), 0 12px 32px 0 rgba(13, 31, 60, 0.08);
+}
+
+/* ─── Global base styles ─────────────────────────────────────────── */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+}
+
+::selection {
+  background-color: var(--color-avla-blue-subtle);
+  color: var(--color-avla-blue-dark);
+}
