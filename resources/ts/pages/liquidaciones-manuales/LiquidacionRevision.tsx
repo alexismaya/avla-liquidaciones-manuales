@@ -118,9 +118,9 @@ export default function LiquidacionRevision() {
       <PageHeader title="Revisión de Movimientos" description={`${agente.nombre} — ${agente.rfc}`} />
       <Stepper steps={WIZARD_STEPS} currentStep={1} />
 
-      <div className="grid grid-cols-1 xl:grid-cols-5 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
         {/* Left column */}
-        <div className="xl:col-span-3 space-y-4">
+        <div className="lg:col-span-3 space-y-4">
           <Card>
             <Input label="Periodo de liquidación" value={store.periodoManual}
               onChange={(e) => store.setPeriodoManual(e.target.value)} placeholder="Ej: 202517A" />
@@ -128,7 +128,7 @@ export default function LiquidacionRevision() {
 
           <Card padding={false}>
             <div className="overflow-x-auto">
-              <table className="w-full text-sm">
+              <table className="w-full text-sm min-w-[700px]">
                 <thead>
                   <tr className="border-b border-border">
                     {['Póliza','Cliente','Fecha','Mon.','Prima Neta','Comisión','T.C.','MXN','Tipo',''].map((h) => (
@@ -167,7 +167,7 @@ export default function LiquidacionRevision() {
             {showAddPanel && (
               <div className="mt-4 space-y-3">
                 <SearchBar value={searchPoliza} onChange={setSearchPoliza} placeholder="Buscar por póliza o cliente..." />
-                <div className="border border-border rounded-[var(--radius-md)] overflow-hidden">
+                <div className="border border-border rounded-[var(--radius-md)] overflow-hidden overflow-x-auto">
                   <table className="w-full text-xs">
                     <tbody className="divide-y divide-border/50">
                       {filteredPolizas.map((p) => (
@@ -193,7 +193,7 @@ export default function LiquidacionRevision() {
         </div>
 
         {/* Right column */}
-        <div className="xl:col-span-2 space-y-4">
+        <div className="lg:col-span-2 space-y-4">
           <RetentionBox agente={agente} resumen={resumen} />
           <Card className="bg-bg-alt">
             <p className="text-xs text-text-muted leading-relaxed"><strong>NOTA 1:</strong> Los montos en USD se convierten a MXN con el tipo de cambio de emisión.</p>

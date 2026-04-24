@@ -44,7 +44,7 @@ export default function OperacionesIndex() {
       />
 
       {/* Stats cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 mb-6 sm:mb-8">
         {stats.map((stat) => (
           <Card key={stat.label} className="flex items-center gap-4">
             <div className={`w-12 h-12 rounded-xl ${stat.bgColor} flex items-center justify-center`}>

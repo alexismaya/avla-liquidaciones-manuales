@@ -19,7 +19,7 @@ export default function GeneracionPDF() {
       />
 
       {/* Tabs */}
-      <div className="flex gap-1 mb-6 bg-bg-alt p-1 rounded-[var(--radius-md)] w-fit">
+      <div className="flex gap-1 mb-6 bg-bg-alt p-1 rounded-[var(--radius-md)] w-full sm:w-fit overflow-x-auto">
         <div className="px-4 py-2 rounded-md bg-avla-blue text-white text-sm font-medium">
           Generación de PDF
         </div>
@@ -32,7 +32,7 @@ export default function GeneracionPDF() {
       </div>
 
       {/* Agent cards grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
         {LIQUIDACIONES_MOCK.map((liq) => (
           <Card key={liq.id} className="hover:shadow-[var(--shadow-elevated)] transition-shadow duration-200">
             <div className="flex items-start justify-between mb-3">

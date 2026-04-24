@@ -48,7 +48,7 @@ export default function GeneracionPDFUnificado() {
 
       {/* Search panel */}
       <Card className="mb-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 items-end">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-end">
           <Select
             label="Intermediario Líder"
             options={[{ value: '', label: 'Todos' }, ...AGENTES_MOCK.map((a) => ({ value: a.nombre, label: a.nombre }))]}
@@ -71,16 +71,18 @@ export default function GeneracionPDFUnificado() {
 
       {/* Selection actions bar */}
       {selected.length > 0 && (
-        <div className="flex items-center justify-between mb-4 p-3 rounded-[var(--radius-md)] bg-avla-blue-subtle border border-avla-blue/20">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4 p-3 rounded-[var(--radius-md)] bg-avla-blue-subtle border border-avla-blue/20">
           <span className="text-sm font-medium text-avla-blue">{selected.length} liquidaciones seleccionadas</span>
           <div className="flex items-center gap-2">
             <Button size="sm" variant="secondary" onClick={() => alert('Descarga seleccionadas (simulación)')}>
               <Download size={14} />
-              Descargar seleccionadas
+              <span className="hidden sm:inline">Descargar seleccionadas</span>
+              <span className="sm:hidden">Descargar</span>
             </Button>
             <Button size="sm" onClick={() => setShowUnify(true)}>
               <Link2 size={14} />
-              Unificar seleccionadas
+              <span className="hidden sm:inline">Unificar seleccionadas</span>
+              <span className="sm:hidden">Unificar</span>
             </Button>
           </div>
         </div>
@@ -88,8 +90,8 @@ export default function GeneracionPDFUnificado() {
 
       {/* Table */}
       <Card padding={false}>
-        <div className="overflow-x-auto">
-          <table className="w-full text-sm">
+        <div className="overflow-x-auto -mx-0">
+          <table className="w-full text-sm min-w-[800px]">
             <thead>
               <tr className="border-b border-border">
                 <th className="py-3 px-4 text-left">

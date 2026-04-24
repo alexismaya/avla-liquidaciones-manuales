@@ -27,10 +27,10 @@ export default function LiquidacionPreviewPDF() {
       <PageHeader title="Vista Previa del PDF" description="Revisa el documento antes de finalizar" />
       <Stepper steps={WIZARD_STEPS} currentStep={2} />
 
-      <div className="grid grid-cols-1 xl:grid-cols-5 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
         {/* Left — PDF Mock */}
-        <div className="xl:col-span-3">
-          <div className="bg-white shadow-[var(--shadow-elevated)] border border-border rounded-[var(--radius-lg)] p-8">
+        <div className="lg:col-span-3">
+          <div className="bg-white shadow-[var(--shadow-elevated)] border border-border rounded-[var(--radius-lg)] p-4 sm:p-6 md:p-8">
             {/* PDF Header */}
             <div className="flex items-center justify-between mb-6 pb-4 border-b-2 border-avla-blue">
               <div className="w-24 h-10 bg-gradient-to-r from-avla-blue to-avla-blue-light rounded-md flex items-center justify-center">
@@ -47,7 +47,7 @@ export default function LiquidacionPreviewPDF() {
             </h2>
 
             {/* Agent info */}
-            <div className="grid grid-cols-2 gap-4 mb-6 text-sm">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 mb-6 text-sm">
               <div>
                 <p className="text-text-muted text-xs">Intermediario</p>
                 <p className="font-medium text-text">{agente?.nombre || 'N/A'}</p>
@@ -110,7 +110,7 @@ export default function LiquidacionPreviewPDF() {
         </div>
 
         {/* Right — Actions */}
-        <div className="xl:col-span-2">
+        <div className="lg:col-span-2">
           <Card>
             <h3 className="font-heading text-base font-semibold text-text mb-4">Instrucciones</h3>
             <div className="space-y-3 text-sm text-text-muted">

@@ -46,7 +46,7 @@ export default function VisualizacionPDF() {
       />
 
       {/* Tabs */}
-      <div className="flex gap-1 mb-6 bg-bg-alt p-1 rounded-[var(--radius-md)] w-fit">
+      <div className="flex gap-1 mb-6 bg-bg-alt p-1 rounded-[var(--radius-md)] w-full sm:w-fit overflow-x-auto">
         <Link
           to={`/operaciones/semanas/${semanaId}/paso-6/generacion`}
           className="px-4 py-2 rounded-md text-text-muted text-sm font-medium hover:text-text hover:bg-surface transition-colors"
@@ -67,8 +67,8 @@ export default function VisualizacionPDF() {
       )}
 
       {/* Actions bar */}
-      <div className="flex items-center justify-between mb-4">
-        <div className="max-w-sm flex-1">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
+        <div className="max-w-sm w-full sm:flex-1">
           <SearchBar value={search} onChange={setSearch} placeholder="Buscar por nombre o RFC..." />
         </div>
         <div className="flex items-center gap-3">
@@ -80,7 +80,8 @@ export default function VisualizacionPDF() {
             disabled={selected.length === 0}
           >
             <Mail size={16} />
-            Enviar correos masivos
+            <span className="hidden sm:inline">Enviar correos masivos</span>
+            <span className="sm:hidden">Enviar</span>
           </Button>
         </div>
       </div>
@@ -88,7 +89,7 @@ export default function VisualizacionPDF() {
       {/* Table */}
       <Card padding={false}>
         <div className="overflow-x-auto">
-          <table className="w-full text-sm">
+          <table className="w-full text-sm min-w-[800px]">
             <thead>
               <tr className="border-b border-border">
                 <th className="py-3 px-4 text-left">
